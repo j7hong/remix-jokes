@@ -1,0 +1,12 @@
+node_modules
+
+/.cache
+/build
+/public/build
+.env
+
+# fly.io related
+.dockerignore
+fly.toml
+
+*.vim
