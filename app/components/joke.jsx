@@ -1,0 +1,29 @@
+import { Link, Form } from "remix"
+
+export function JokeDisplay({
+		joke,
+		isOwner,
+		canDelete = true,
+	}) {
+		return (
+			<div>
+				<p>Here's your hilarious joke:</p>
+				<p>
+					{joke.content}
+				</p>
+				<Link to=".">{joke.name} Permalink</Link>
+				{isOwner ? (
+					<Form method="post">
+						<input
+							type="hidden"
+							name="_method"
+							value="delete"
+						/>
+						<button type="submit" className="button">
+							Delete
+						</button>
+					</Form>
+				) : null}
+			</div>
+		);
+};
